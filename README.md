@@ -1,3 +1,5 @@
+Hosted Link: https://voobane.github.io/challenge-3/
+
 # 03 JavaScript: Employee Payroll Tracker
 
 ## Your Task
