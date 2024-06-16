@@ -7,13 +7,13 @@ const collectEmployees = function() {
   let moreEmployees = true;
 
   while (moreEmployees) {
-    const firstname = prompt("Enter employee's first name:");
-    const lastname = prompt("Enter employee's last name");
-    const salary = parseInt(prompt("Enter employee's Salary"), 10);
+    const name = prompt("Enter employee's first name:");
+    const lastname = prompt("Enter employee's last name:");
+    const salary = parseInt(prompt("Enter employee's Salary:"), 10);
 
-    const employees = {
-      name: firstname,
-      position: lastname,
+    const employee = {
+      name: name,
+      lastname: lastname,
       salary: salary,
     };
 
@@ -23,26 +23,35 @@ const collectEmployees = function() {
   }
 
   return employees;
-};
-
-// Example usage:
-const employeeList = collectEmployees();
-console.log(employeeList);
+}
 
 
 
 
 
-
-// Display the average salary
+// Display the average salary + // TODO: Calculate and display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
+  
 }
 
-// Select a random employee
+
+
+
+// Select a random employee + display a random employee
 const getRandomEmployee = function(employeesArray) {
-  // TODO: Select and display a random employee
+const randomIndex = Math.floor(Math.random() * employeesArray.length);
+const randomEmployee = employeesArray[randomIndex];
+// Todo: -seek the random employee's first and last name
+
+//Todo: -display a the first and last name with console like : "Congratulations to "Random Employee:", our random drawing winning!"
+console.log(`Congratulations to ${randomEmployee.name} ${randomEmployee.lastname}, our random drawing winner!`);
 }
+
+
+
+
+
 
 /*
   ====================
@@ -65,11 +74,11 @@ const displayEmployees = function(employeesArray) {
     const newTableRow = document.createElement("tr");
 
     const firstNameCell = document.createElement("td");
-    firstNameCell.textContent = currentEmployee.firstName;
+    firstNameCell.textContent = currentEmployee.name;
     newTableRow.append(firstNameCell);
 
     const lastNameCell = document.createElement("td");
-    lastNameCell.textContent = currentEmployee.lastName;
+    lastNameCell.textContent = currentEmployee.lastname;
     newTableRow.append(lastNameCell);
 
     const salaryCell = document.createElement("td");
@@ -96,8 +105,8 @@ const trackEmployeeData = function() {
 
   getRandomEmployee(employees);
 
-  employees.sort(function(a,b) {
-    if (a.lastName < b.lastName) {
+  employees.sort(function(a, b) {
+    if (a.lastname < b.lastname) {
       return -1;
     } else {
       return 1;
